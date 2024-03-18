@@ -4,3 +4,4 @@ const axios = require('axios');
     const response = await axios.get(`https://api.tradingeconomics.com/country/mexico?c=${api_key}`)
     console.log(response.data)
 })()
+wiescirolnicze.pl/ceny-rolnicze/zboza
