@@ -1,0 +1,25 @@
+import React from 'react';
+import useGrainStatistics from './GrainHook';
+
+const GrtainStatisticsComponent = () => {
+  const { grainStatistics } = useGrainStatistics();
+
+
+  return (
+    <div>
+      <h1>Statystyki Jęczmienia</h1>
+      <ul>
+        <li>Całkowita Produkcja Jęczmienia: {grainStatistics.totalProduction}</li>
+        <li>Średnie Zbiory Jęczmienia: {grainStatistics.averageYield}</li>
+        <li>Najlepsze Regiony Produkcji Jęczmienia:</li>
+        <ul>
+          {grainStatistics.topRegions.map((region, index) => (
+            <li key={index}>{region}</li>
+          ))}
+        </ul>
+      </ul>
+    </div>
+  );
+};
+
+export default GrainStatisticsComponent;
