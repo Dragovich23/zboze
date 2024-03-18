@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+
+const GrainInfo = (props) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <div className="grain-info">
+      <h2>{props.name}</h2>
+      <button onClick={toggleExpanded}>
+        {isExpanded ? 'Show Less' : 'Show More'}
+      </button>
+      {isExpanded && (
+        <div>
+          <p>Type: {props.type}</p>
+          <p>Origin: {props.origin}</p>
+          <p>Nutritional Value: {props.nutritionalValue}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default GrainInfo;
