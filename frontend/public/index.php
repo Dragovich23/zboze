@@ -1,16 +1,18 @@
-<? 
+<?php
 include "../../backend/config/connection.php";
 ?>
+<script>
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './components/App';
+import './stylesheet/index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strefa Rolnika</title>
-    <script src="../src/js/tabNameSwap.ts"></script>
-</head>
-<body>
-    
-</body>
-</html>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+    </script>
+
