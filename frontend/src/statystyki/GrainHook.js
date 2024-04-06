@@ -6,12 +6,21 @@ const useGrainStatistics = (grainId) => {
   useEffect(() => {
     const fetchGrainStatistics = async () => {
       try {
-        const response = await fetch(`https://api.example.com/grain-statistics/${grainId}`);
+        const response = await fetch('./statistics');
         if (!response.ok) {
-          throw new Error('Failed to fetch grain statistics');
+          throw new Error('Nie udało się załadować statystyk');
         }
-        const data = await response.json();
-        setGrainStatistics(data);
+        const textData = await response.text();
+        const lines = textData.split('|');
+        const data = lines.map(line => {
+          const [id, zboze, cena, name, yieldValue, production] = line.split(', ');
+          return { id: id, zboze, cena: cena, name, yield: yieldValue, production: production };
+        });
+        const statistics = data.find(stat => stat.id === grainId); // Finding statistics by id field
+        if (!statistics) {
+          throw new Error('Statystyk nie znaleziono');
+        }
+        setGrainStatistics(statistics);
       } catch (error) {
         console.error(error);
       }

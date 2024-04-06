@@ -9,14 +9,22 @@ const Banner = () => {
     './pictures/pszenzyto.png'
   ];
 
+  let counter=1;
+
   const handleClick = () => {
+    if(counter > 7) counter = 1;
     setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    $('html,body').animate({
+      scrollTop: $("#"+counter).offset().top},
+      'slow');
+      counter++;
+      
   };
 
   return (
     <div className="banner" onClick={handleClick}>
       <img
-        src={require(`./images/${images[currentImage]}`)}
+        src={require(`${images[currentImage]}`)}
         alt={`Banner ${currentImage + 1}`}
         className="fade"
       />
