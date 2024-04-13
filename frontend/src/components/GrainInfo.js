@@ -21,12 +21,13 @@ class GrainInfo extends Component {
     return (
       <div className="grain-info">
         <h2>{name}</h2>
+        <p>Zastosowania: {uses}</p>
         <button onClick={this.toggleExpanded}>
-          {isExpanded ? 'Show Less' : 'Show More'}
+          {isExpanded ? 'Ukryj te cudowne statystyki' : 'Przepraszam, otworzyć?'}
         </button>
         {isExpanded && (
           <div>
-            <p>Zastosowania: {uses}</p>
+            
             <p>Wartość odżywcza: {energy} kcal na 100g</p>
             <p>Zawartość białka: {protein}g na 100g</p>
           </div>

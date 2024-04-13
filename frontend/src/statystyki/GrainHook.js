@@ -4,30 +4,27 @@ const useGrainStatistics = (grainId) => {
   const [grainStatistics, setGrainStatistics] = useState(null);
 
   useEffect(() => {
-    const fetchGrainStatistics = async () => {
-      try {
-        const response = await fetch('./statistics');
-        if (!response.ok) {
-          throw new Error('Nie udało się załadować statystyk');
-        }
-        const textData = await response.text();
-        const lines = textData.split('|');
-        const data = lines.map(line => {
-          const [id, zboze, cena, name, yieldValue, production] = line.split(', ');
-          return { id: id, zboze, cena: cena, name, yield: yieldValue, production: production };
-        });
-        const statistics = data.find(stat => stat.id === grainId); // Finding statistics by id field
-        if (!statistics) {
-          throw new Error('Statystyk nie znaleziono');
-        }
-        setGrainStatistics(statistics);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    const rawData = 
+`1, pszenica konsumpcyjna, 860.00, pszenicy, 5.2 tony, Nizinia Śląska i Szczecińska
+2, pszenżyto, 620.00, pszenżyta, 4.5 tony, Wielkopolska i Kujawy
+3, żyto konsumpcyjne, 560.00, żyta, 3.5 tony, Polska Środkowa i Wschodnia
+4, kukurydza, 620.00, kukurydzy, 11.5 tony, Wielkopolska i Kujawsko-Pomorskie
+5, owies, 1000.00, owsa, 6.7 tony, Pojezierze Pomorskie i Mazurskie
+6, jęczmień konsumpcyjny, 600.00, jęczmienia, 6 ton, w Polsce zachodniej i na Przedgórzu Sudeckim`;
 
-    fetchGrainStatistics();
+    const lines = rawData.split('\n');
 
+    const data = lines.map(line => {
+      const [id, zboze, cena, name, yieldValue, production] = line.split(', ');
+      return { id: id, zboze: zboze, cena: cena, name, yield: yieldValue, production: production };
+    });
+
+    const statistics = data.find(stat => stat.id === grainId);
+    if (!statistics) {
+      console.error('Statystyk nie znaleziono');
+      return;
+    }
+    setGrainStatistics(statistics);
   }, [grainId]);
 
   return { grainStatistics };

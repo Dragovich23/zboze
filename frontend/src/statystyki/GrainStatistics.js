@@ -5,7 +5,7 @@ function GrainStatisticsComponent({ grainId }) {
   const { grainStatistics } = useGrainStatistics(grainId);
 
   return (
-    <div id={grainId}>
+    <div id={grainId} class="graincomponent">
       <h1>Statystyki {grainStatistics?.name}</h1>
       <ul>
         <li>Średnia cena: {grainStatistics?.cena}</li>

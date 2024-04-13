@@ -9,16 +9,18 @@ const Banner = () => {
     './pictures/pszenzyto.png'
   ];
 
-  let counter=1;
+  let counter = 1;
 
   const handleClick = () => {
-    if(counter > 7) counter = 1;
+    if (counter > 7) counter = 1;
     setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    $('html,body').animate({
-      scrollTop: $("#"+counter).offset().top},
-      'slow');
-      counter++;
-      
+    const element = document.getElementById(String(counter));
+    if (element) {
+      const yOffset = -100; // Adjust as needed
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    counter++;
   };
 
   return (
