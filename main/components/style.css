@@ -1,0 +1,132 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(60deg, rgb(242, 223, 48), #c59805);
+}
+
+.grain:nth-of-type(6) {
+    margin-bottom: 35vh;
+}
+
+nav{
+    background: linear-gradient(60deg, rgb(242, 223, 48), #c59805);
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav li {
+    margin-right: 10px;
+}
+
+.nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: #96881d;
+}
+
+.nav i {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+div.nav {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 65px;
+    letter-spacing: 10px;   
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.sponsor img {
+    max-width: 100%;
+    border-radius: 50px
+}
+
+figcaption{
+    margin-bottom: 15px;
+}
+
+.grain {
+    background-color: hsla(51, 100%, 26%, 0.342);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow: hidden;
+    margin: 0 20px 30px 20px;
+}
+
+.graincomponent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.graincomponent li {
+    margin-bottom: 5px;
+}
+
+.grain-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.grain-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.grain-info button {
+    background-color: #ff9f0599;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grain-info button:hover {
+    background-color: #0056b3;
+}
+
+.grain-info > div{
+    padding: 10px;
+    background-color: #4e38001c;
+    border-radius: 5px;
+}
+
+.graincomponent > h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+div.banner {
+    position: fixed;
+     bottom: 0%;
+     width: 100%;
+     height: 300px;
+}
+
+img.banner {
+    width: 100%;
+    height: 300px;
+}
