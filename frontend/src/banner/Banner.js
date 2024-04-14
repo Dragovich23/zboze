@@ -25,7 +25,7 @@ const Banner = () => {
       const imageCount = bannerImages.length;
 
       // Calculate the threshold as a percentage of the viewport height
-      const thresholdPercentage = 55; // Adjust this value as needed
+      const thresholdPercentage = 30; // Adjust this value as needed
       const threshold = (window.innerHeight * thresholdPercentage) / 100;
 
       // Calculate the maximum scroll position for the images

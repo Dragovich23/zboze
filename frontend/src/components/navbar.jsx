@@ -4,11 +4,11 @@ class Navbar extends Component {
   render() {
     return (
       <nav>
-        <ul className="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul class="nav">
+          <li><a href="#"><i class="fas fa-home"></i></a></li>
+          <li><a href="#"><i class="fas fa-info-circle"></i></a></li>
+          <li><a href="#"><i class="fas fa-cogs"></i></a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i></a></li>
         </ul>
         <div className="nav"><b>JESTEŚMY WIELKIMI FANAMI WĘGLOWODANÓW</b></div>
       </nav>

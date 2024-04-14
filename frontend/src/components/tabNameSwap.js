@@ -45,7 +45,7 @@ class TitleChanger extends Component {
   }
 
   render() {
-    return null; // This component doesn't render anything visible
+    return null;
   }
 }
 
